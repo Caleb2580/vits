@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
+
+.nav_container {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
 .nav {
+    position: absolute;
     font-family: 'Space Mono', monospace;
     font-weight: 400;
-    /* width: 100%; */
+    width: calc(100% - 10em);
     height: 100px;
     display: flex;
     justify-content: space-between;
     padding: 0 5em;
     align-items: center;
     overflow: hidden;
+}
+
+.nav #left {
+    transition: ease-in-out .5s;
 }
 
 .nav #left h1 {
@@ -27,6 +39,7 @@
     align-items: center;
     gap: 10dvw;
     letter-spacing: 2px;
+    overflow: hidden;
 }
 
 .nav #right a {
