@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    letter-spacing: 2px;
+}
+
+.page {
+    width: 100%;
+    height: 100dvh;
+    min-height: 400px;
+    background-color: rgb(11, 24, 41);
+}
+
+.page_full {
+    width: 100%;
+    /* min-height: 900px; */
+    height: 900px;
+    background-color: rgb(11, 24, 41);
+}
+
+.page h1 {
+    font-weight: 400;
+}
+
+.page .diamond_1, .diamond_2 {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+}
+
+.page .diamond_1 {
+    margin-top: -4em;
+    margin-left: 17em;
+}
+
+.page .diamond_2 {
+    margin-top: 12em;
+    margin-left: -15em;
+}
+
+.page .diamond_1 img {
+    height: 100%;
+}
+
+.page .diamond_2 img {
+    height: 100%;
+}
+
+.mini_page .diamond_1, .diamond_2 {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    z-index: 0;
+}
+
+.mini_page .diamond_1 {
+    left: calc(100% - 80px - 5em);
+    top: calc(100% - 80px - 5em);
+}
+
+.mini_page .diamond_2 {
+    left: 5em;
+    top: 5em;
+}
+
+.mini_page .diamond_1 img {
+    height: 100%;
+}
+
+.mini_page .diamond_2 img {
+    height: 100%;
+}
+
+.main_nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 100px);
+}
+
+.main_nav h1 {
+    font-size: 3em;
+    color: rgb(195, 230, 253);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_nav span {
+    text-align: center;
+}
+
+.main_nav span.word {
+    display: block;
+}
+
+.main_nav button {
+    font-family: 'Hammersmith One';
+    font-weight: 1000;
+    font-size: 1.3em;
+    padding: .5em 1em;
+    color: rgb(11, 24, 41);
+    background-color: rgb(195, 230, 253);
+    border: 5px solid rgb(195, 230, 253);
+    border-radius: 30px;
+    transition: ease-in-out .2s;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.main_nav button:hover {
+    background-color: rgb(11, 24, 41);
+    color: rgb(195, 230, 253);
+}
+
+.mini_page {
+    width: 100%;
+    /* height: 60dvh; */
+    min-height: 500px;
+    background-color: rgb(2, 43, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.mini_page .quote {
+    font-weight: 400;
+    color: rgb(195, 230, 253);
+    margin: 0;
+    padding: 1em 0;
+    width: 70%;
+    text-align: center;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+.services {
+    margin: 0 2.5%;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    gap: 2em;
+    margin-left: 15%;
+}
+
+.services h5 {
+    color: rgb(195, 230, 253);
+    font-weight: 400;
+    width: 70%;
+}
+
+.service {
+    background-color: rgb(250, 250, 250);
+    height: 20%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+    padding: 1em 2em 1em 5em;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    align-items: left;
+}
+
+.service_img {
+    width: 125px;
+    height: 125px;
+    overflow: hidden;
+    position: absolute;
+    left: calc(15% - 62.5px);
+}
+
+.service_img img {
+    height: 100%;
+}
+
+.service_img_mobile {
+    display: none;
+}
+
+.service h1, h5, li {
+    margin: 0;
+    padding: 0;
+}
+
+.service h1 {
+    color: rgb(11, 24, 41);
+    font-size: 1.5em;
+}
+
+.service h5 {
+    font-family: 'Hammersmith One';
+    margin-top: -5px;
+    color: rgb(56, 182, 255);
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.service .line {
+    background-color: transparent;
+    width: 50%;
+    height: 0px;
+    border-top: 5px dashed rgb(150, 150, 150);
+    /* border-top: 5px dashed #DFDFDF; */
+}
+
+.services h5 a {
+    color: rgb(195, 230, 253);
+    font-weight: 1000;
+    text-decoration: underline;
+}
+
+.service ul {
+    margin: 0 0;
+}
+
+.service ul li {
+    font-family: 'Hammersmith One';
+    color: rgb(11, 24, 41);
+}
+
+.service#one {
+    width: 50%;
+}
+.service#two {
+    width: 60%;
+}
+.service#three {
+    width: 70%;
+}
+
+.talk_page {
+    width: 100%;
+    min-height: 300px;
+    background-color: rgb(2, 43, 88);
+    overflow: hidden;
+}
+
+.talk_page .inner {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5em;
+    padding: 2em 0;
+}
+
+.talk_page .text h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: rgb(250, 250, 250);
+    text-align: right;
+}
+
+.talk_page .text h1 span {
+    text-decoration: underline;
+}
+
+.talk_page .text h3 {
+    font-weight: 400;
+    text-align: right;
+    color: rgb(250, 250, 250);
+}
+
+.talk_page .form h2 {
+    color: rgb(250, 250, 250);
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.talk_page .form input {
+    color: rgb(250, 250, 250);
+    background-color: rgb(11, 24, 41);
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 300px;
+    padding: 1em 1em;
+    font-family: 'Space Mono';
+    letter-spacing: 1px;
+}
+
+.talk_page .form textarea {
+    color: rgb(250, 250, 250);
+    background-color: rgb(11, 24, 41);
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 300px;
+    resize: none;
+    padding: 1em 1em;
+    font-family: 'Space Mono';
+    height: auto;
+    letter-spacing: 1px;
+}
+
+.talk_page .form button {
+    display: block;
+    margin-top: 1em;
+    font-family: 'Hammersmith One';
+    font-weight: 1000;
+    font-size: .9em;
+    padding: .5em 1em;
+    color: rgb(2, 43, 88);
+    background-color: rgb(195, 230, 253);
+    border: 3px solid rgb(195, 230, 253);
+    border-radius: 30px;
+    transition: ease-in-out .2s;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.talk_page .form button:hover {
+    background-color: rgb(2, 43, 88);
+    color: rgb(195, 230, 253);
+}
+
+.footer {
+    height: 200px;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.footer h1 {
+    color: rgb(223, 223, 223);
+    font-size: 4em;
+}
+
+.footer h1 span.underlined {
+    margin: 0 2px;
+    text-decoration: underline;
+}
+
+.footer h1 span span {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font-size: .2em;
+    margin-top: 1.7em;
+    text-decoration: none;
+}
+
+.footer .links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.footer .links a {
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+}
+
+@media screen and (max-width: 1000px) {
+    .service {
+        font-size: .8em;
+    }
+
+    .service_img {
+        width: 100px;
+        height: 100px;
+        left: calc(15% - 50px);
+    }
+
+    .service .line {
+        border-top: 3px dashed rgb(150, 150, 150);
+    }
+
+    .mini_page .diamond_1, .mini_page .diamond_2 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+    }
+    
+    .mini_page .diamond_1 {
+        left: calc(100% - 80px - 3em);
+        top: calc(100% - 80px - 3em);
+    }
+    
+    .mini_page .diamond_2 {
+        left: 3em;
+        top: 3em;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    .main_nav {
+        font-size: .7em;
+    }
+
+    .service {
+        font-size: .7em;
+    }
+
+    .page_full {
+        min-height: 700px;
+    }
+
+    .page .diamond_1, .diamond_2 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .page .diamond_1 {
+        margin-top: -1em;
+        margin-left: 13em;
+    }
+    
+    .page .diamond_2 {
+        margin-top: 11em;
+        margin-left: -8em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .service#one {
+        width: 45%;
+    }
+    .service#two {
+        width: 55%;
+    }
+    .service#three {
+        width: 65%;
+    }
+
+    .service_img {
+        width: 80px;
+        height: 80px;
+        left: calc(15% - 50px);
+    }
+
+    .service {
+        padding-left: 3em;
+    }
+
+    .mini_page h1.quote {
+        font-size: 1.3em;
+    }
+
+    .talk_page .inner {
+        gap: 2em;
+    }
+
+    .talk_page .text {
+        font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .page_full {
+        min-height: 300px;
+        padding: 3em 0;
+    }
+
+    .services {
+        margin: 0 0 0 2.5%;
+    }
+
+    .service_img {
+        display: none;
+    }
+
+    .service_img_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+
+    .service_img_mobile img {
+        height: 100%;
+    }
+
+    .services h5 {
+        width: 100%;
+    }
+
+    .service {
+        font-size: .6em;
+    }
+
+    .service {
+        border-radius: 15px;
+    }
+
+    .service#one {
+        width: 90%;
+    }
+    .service#two {
+        width: 90%;
+    }
+    .service#three {
+        width: 90%;
+    }
+
+    .service ul {
+        padding: 0 0 0 2em;
+    }
+
+    .mini_page .diamond_1, .diamond_2 {
+        position: absolute;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .mini_page .diamond_1 {
+        left: calc(100% - 70px - 2em);
+        top: calc(100% - 70px - 2em);
+    }
+    
+    .mini_page .diamond_2 {
+        left: 2em;
+        top: 2em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .main_nav {
+        font-size: .5em;
+    }
+    
+    .main_nav button {
+        font-size: 1.5em;
+    }
+
+    .mini_page h1 {
+        font-size: 1.5em;
+    }
+
+    .service ul {
+        padding: 0 0 0 1.5em;
+    }
+
+    .services {
+        margin: 0 auto;
+        padding: 0;
+        align-items: center;
+    }
+
+    .services h5 {
+        width: 90%;
+    }
+
+    .service {
+        border-radius: 15px;
+    }
+
+    .service#one {
+        width: 80%;
+    }
+    .service#two {
+        width: 80%;
+    }
+    .service#three {
+        width: 80%;
+    }
+
+    .page_full {
+        padding: 5em 0;
+    }
+
+    .mini_page h1.quote {
+        font-size: 1.1em;
+    }
+
+    .page .diamond_1, .page .diamond_2 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .page .diamond_1 {
+        margin-top: 1em;
+        margin-left: 10.5em;
+    }
+    
+    .page .diamond_2 {
+        margin-top: 9.5em;
+        margin-left: -5em;
+    }
+
+    .mini_page .diamond_1, .mini_page .diamond_2 {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+    }
+    
+    .mini_page .diamond_1 {
+        left: calc(100% - 50px - 2em);
+        top: calc(100% - 50px - 2em);
+    }
+    
+    .mini_page .diamond_2 {
+        left: 2em;
+        top: 2em;
+    }
+
+    .talk_page .inner {
+        gap: 1em;
+    }
+
+    .talk_page .text {
+        font-size: .6em;
+    }
+
+    .talk_page .form {
+        font-size: .6em;
+    }
+
+    .talk_page .form input, .talk_page .form textarea {
+        font-size: 1em;
+        width: 150px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .mini_page .diamond_1, .mini_page .diamond_2 {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+    }
+    
+    .mini_page .diamond_1 {
+        left: calc(100% - 50px - 1em);
+        top: calc(100% - 50px - 1em);
+    }
+    
+    .mini_page .diamond_2 {
+        left: 1em;
+        top: 1em;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="nav.css">
+    <script src="nav.js"></script>
+    <script src="main.js"></script>
+    <title>VitalIT Solutions</title>
+</head>
+<body>
+    <div class="page">
+        <div class="nav">
+            <div id="left">
+                <h1 onclick="location.href = '/';"><span class="underlined">V</span>italIT Solutions</h1>
+            </div>
+            <button class="nav_drag" onclick="slideNav();">&#9776;</button>
+            <div id="right">
+                <a href="/">Home</a>
+                <a href="Services">Services</a>
+                <a href="About">About</a>
+                <a href="Contact-Us">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="diamond_1">
+            <img src="light_diamond.png" alt="">
+        </div>
+
+        <div class="diamond_2">
+            <img src="light_diamond_flop.png" alt="">
+        </div>
+
+        <div class="main_nav">
+            <h1>
+                <span class="word">Personalized</span>
+                <span>IT Service Management and</span>
+                <span>Technology Services</span>
+            </h1>
+            <button onclick="location = '/Services';">Get Started</button>
+        </div>
+    </div>
+
+    <div class="mini_page">
+        <div class="diamond_1">
+            <img src="dark_diamond.png" alt="">
+        </div>
+
+        <div class="diamond_2">
+            <img src="dark_diamond_flop.png" alt="">
+        </div>
+        <h1 class="quote">Our mission is to empower small businesses with innovative IT solutions that drive efficiency, security, and growth. We are committed to delivering exceptional service and support.</h1>
+    </div>
+
+    <div class="page_full">
+        <div class="services">
+            <div class="service_img_mobile">
+                <img src="internet.png" alt="">
+            </div>
+            <div class="service" id="one">
+                <div class="service_img">
+                    <img src="internet.png" alt="">
+                </div>
+                <h1>Website Creation</h1>
+                <h5>Starting at $100</h5>
+                <div class="line"></div>
+                <ul>
+                    <li>Customized website design</li>
+                    <li>Responsive design for mobile devices</li>
+                    <li>Domain registration and setup</li>
+                </ul>
+            </div>
+            <div class="service_img_mobile">
+                <img src="cloud.png" alt="">
+            </div>
+            <div class="service" id="two">
+                <div class="service_img">
+                    <img src="cloud.png" alt="">
+                </div>
+                <h1>Cloud Migration and Management</h1>
+                <h5>Starting at $200/month</h5>
+                <div class="line"></div>
+                <ul>
+                    <li>Migration of data and applications to the cloud</li>
+                    <li>Integration with existing systems and applications</li>
+                    <li>Training for employees on how to use cloud services effectively</li>
+                </ul>
+            </div>
+            <div class="service_img_mobile">
+                <img src="web.png" alt="">
+            </div>
+            <div class="service" id="three">
+                <div class="service_img">
+                    <img src="web.png" alt="">
+                </div>
+                <h1>Custom IT Solutions</h1>
+                <h5>Starting at $500/month</h5>
+                <div class="line"></div>
+                <ul>
+                    <li>Tailored IT services based on specific business needs</li>
+                    <li>IT project management and implementation</li>
+                    <li>Dedicated IT consultant for strategic planning</li>
+                </ul>
+            </div>
+            <h5>If our packages do not meet your needs, please feel free to <a href="/Contact-Us">Contact Us</a>.</h5>
+        </div>
+    </div>
+
+    <div class="talk_page">
+        <div class="inner">
+            <div class="text">
+                <h1><span>L</span>et's Talk</h1>
+                <h3>We're here for you</h3>
+            </div>
+            <div class="form">
+                <h2>First & Last Name</h2>
+                <input type="text">
+                <h2>Email</h2>
+                <input type="text">
+                <h2>Phone Number</h2>
+                <input type="text">
+                <h2>Message</h2>
+                <textarea name="" id=""></textarea>
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1><span class="underlined V">V</span><span class="underlined">S</span></h1>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="Services">Services</a>
+            <a href="About">About</a>
+            <a href="Contact-Us">Contact Us</a>
+        </div>
+    </div>
+
+
+    <script>
+        const textarea = document.querySelector('.talk_page .form textarea');
+
+        textarea.addEventListener('input', () => {
+            console.log('hello')
+            textarea.style.height = 'auto'; // Reset the height
+            textarea.style.height = textarea.scrollHeight + 'px'; // Set the height to match the content
+        });
+    </script>
+</body>
+</html>
