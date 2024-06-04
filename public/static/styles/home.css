@@ -150,15 +150,11 @@ body {
     z-index: -1;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 950px;
     width: 100%;
     background-image: url('space.jpg');
     background-size: 100% 100%;
     background-position: center;
-}
-
-.mini_page_background img {
-    height: 100%;
 }
 
 .mini_page {
@@ -487,6 +483,12 @@ body {
     .page .diamond_2 {
         margin-top: 8em;
         margin-left: -7em;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .mini_page_background {
+        height: 1100px;
     }
 }
 
