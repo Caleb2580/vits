@@ -36,5 +36,39 @@ function slideNav() {
 }
 
 
+function scrollToPage(location) {
+    let amt = window.scrollY;
+    switch(location) {
+        case 'Home':
+            scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+            break;
+        case 'About':
+            document.querySelector('.mini_page_container').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            })
+            break;
+        case 'Services':
+            const services = document.querySelector('.page_full');
+            const y = services.getBoundingClientRect().top + window.scrollY - parseFloat(getComputedStyle(services).paddingTop.replace('px', ''));
+            scrollTo({
+                behavior: 'smooth',
+                top: y,
+                left: 0,
+            })
+            break;
+        case 'Contact Us':
+            document.querySelector('.talk_page').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            })
+            break;
+    }
+}
+
 
 

@@ -51,6 +51,19 @@
     font-size: 1em;
 }
 
+.nav #right button {
+    color: rgb(195, 230, 253);
+    text-decoration: none;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-family: 'Space Mono';
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
 .nav #left h1 span.underlined{
     text-decoration: underline;
 }
