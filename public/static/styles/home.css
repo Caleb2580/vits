@@ -415,9 +415,17 @@ body {
     align-items: left;
 }
 
-.footer .links a {
+.footer .links button {
     text-decoration: none;
     color: rgb(250, 250, 250);
+    background-color: transparent;
+    text-align: left;
+    border: none;
+    font-family: 'Space Mono';
+    padding: 0;
+    margin: 0;
+    letter-spacing: 2px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {
