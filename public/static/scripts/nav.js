@@ -35,9 +35,10 @@ function slideNav() {
     }
 }
 
-
 function scrollToPage(location) {
-    let amt = window.scrollY;
+    if (window.location.pathname != '/') {
+        window.location.href = '/';
+    }
     switch(location) {
         case 'Home':
             scrollTo({

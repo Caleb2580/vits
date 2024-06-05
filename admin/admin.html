@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="static/images/logo_dark_nobg.png">
+    <link rel="stylesheet" href="static/styles/home.css">
+    <link rel="stylesheet" href="static/styles/nav.css">
+    <script src="/nav.js"></script>
+    <title>VitalIT Solutions</title>
+</head>
+<body>
+    <div class="page">
+        <div class="nav_container">
+            <div class="nav">
+                <div id="left">
+                    <h1 onclick="scrollToPage('Home')"><span class="underlined">V</span>italIT <span class="underlined">S</span>olutions</h1>
+                </div>
+                <button class="nav_drag" onclick="slideNav();">&#9776;</button>
+                <div id="right">
+                    <!-- <a href="/">Home</a>
+                    <a href="Services">Services</a>
+                    <a href="About">About</a>
+                    <a href="Contact-Us">Contact Us</a> -->
+                    <button onclick="scrollToPage('Home')">Home</button>
+                    <button onclick="scrollToPage('About')">About</button>
+                    <button onclick="scrollToPage('Services')">Services</button>
+                    <button onclick="scrollToPage('Contact Us')">Contact Us</button>
+                </div>
+            </div>
+        </div>
+
+        <div></div>
+    </div>
+
+    <div class="footer">
+        <h1><span class="underlined V">V</span><span class="underlined">S</span></h1>
+        <div class="links">
+            <button onclick="scrollToPage('Home')">Home</button>
+            <button onclick="scrollToPage('About')">About</button>
+            <button onclick="scrollToPage('Services')">Services</button>
+            <button onclick="scrollToPage('Contact Us')">Contact Us</button>
+        </div>
+    </div>
+
+    <script>
+        function getContacts() {
+            fetch('/api/admin/get-contacts', {
+                method: 'GET',
+                headers: {
+                    'authorization': localStorage.getItem('token'),
+                }
+            }).then(res => res.json()).then(res => {
+                if (res.success) {
+                    console.log(res.contacts);
+                } else {
+                    location.href = '/admin-login'
+                }
+            }).catch(error => {
+                console.log('Error:', error);
+            })
+        };
+
+        getContacts();
+    </script>
+
+</body>
+</html>
