@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="x-icon" href="static/images/logo_dark_nobg.png">
-    <link rel="stylesheet" href="static/styles/home.css">
+    <link rel="stylesheet" href="static/styles/admin.css">
     <link rel="stylesheet" href="static/styles/nav.css">
     <script src="/nav.js"></script>
     <title>VitalIT Solutions</title>
@@ -30,7 +30,34 @@
             </div>
         </div>
 
-        <div></div>
+        <div class="main_container">
+            <div class="main">
+                <table class="contacts">
+                    <tr>
+                        <th>Business Name</th>
+                    </tr>
+                    <tr>
+                        <th>Message</th>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                    </tr>
+                    <tr>
+                        <th>Contact Name</th>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <th>Contacted</th>
+                    </tr>
+                </table>
+                <button class="updateContactsBtn" onclick="updateContacts();">&#10227;</button>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
@@ -44,24 +71,128 @@
     </div>
 
     <script>
+        async function updateContacts() {
+            try {
+                let contacts = await getContacts();
+                if (contacts == null) {
+                    alert('Session expired, please login again');
+                    location.href = '/admin-login';
+                } else {
+                    let table = document.querySelector('table.contacts');
+                    table.innerHTML = "";
+                    headings = ['Business Name', 'Message', 'Email', 'Phone Number', 'Contact Name', 'Date', 'Contacted'];
+                    for (let heading in headings) {
+                        let newHeading = document.createElement('th');
+                        newHeading.innerHTML = headings[heading];
+                        let newRow = document.createElement('tr');
+                        newRow.appendChild(newHeading);
+                        table.appendChild(newRow);
+                    }
+                    for (let contact in contacts) { // Business Name, Message, Email, Phone Number, Contact Name, Date, Contacted
+                        let rows = table.querySelectorAll('tr');
+
+                        // Business Name
+                        let bN = document.createElement('td');
+                        bN.innerHTML = contacts[contact]['business'];
+                        rows[0].appendChild(bN);
+
+                        // Message
+                        let mes = document.createElement('td');
+                        mes.innerHTML = contacts[contact]['message'];
+                        rows[1].appendChild(mes);
+
+                        // Email
+                        let email = document.createElement('td');
+                        email.innerHTML = contacts[contact]['email'];
+                        rows[2].appendChild(email);
+
+                        // Phone Number
+                        let pN = document.createElement('td');
+                        pN.innerHTML = contacts[contact]['phone'];
+                        rows[3].appendChild(pN);
+
+                        // Contact Name
+                        let cN = document.createElement('td');
+                        cN.innerHTML = contacts[contact]['name'];
+                        rows[4].appendChild(cN);
+
+                        // Date
+                        let date = document.createElement('td');
+                        date.innerHTML = contacts[contact]['timestamp'];
+                        rows[5].appendChild(date);
+
+                        // Contacted
+                        let contactedTd = document.createElement('td');
+                        let contacted = document.createElement('input');
+                        contacted.setAttribute('type', 'checkbox');
+                        contacted.setAttribute('id', contact.toString() + ' ' + contacts[contact]['timestamp'])
+                        // contacted.innerHTML = contacts[contact]['contacted'];
+                        contacted.checked = contacts[contact]['contacted'];
+                        contacted.addEventListener('click', async (event) => {
+                            const id = event.target.getAttribute('id').toString();
+                            const index = id.substring(0, id.indexOf(' '));
+                            const timestamp = id.substring(id.indexOf(' ')+1, id.length);
+                            res = await fetch('/api/admin/contacted', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'authorization': localStorage.getItem('token'),
+                                },
+                                body: JSON.stringify({
+                                    'index': index,
+                                    'timestamp': timestamp,
+                                    'contacted': event.target.checked
+                                })
+                            });
+                            
+                            if (!res.ok) {
+                                event.target.checked = !event.target.checked;
+                                return;
+                            }
+                            res = await res.json();
+                            if (!res.success) {
+                                window.location.reload();
+                            }
+                            
+                        })
+                        contactedTd.appendChild(contacted);
+                        rows[6].appendChild(contactedTd);
+                    }
+                }
+            } catch (error) {
+                alert('Something went wrong');
+            }
+        }
+
         function getContacts() {
-            fetch('/api/admin/get-contacts', {
+            return fetch('/api/admin/get-contacts', {
                 method: 'GET',
                 headers: {
                     'authorization': localStorage.getItem('token'),
                 }
             }).then(res => res.json()).then(res => {
                 if (res.success) {
-                    console.log(res.contacts);
+                    return res.contacts;
                 } else {
-                    location.href = '/admin-login'
+                    return null;
                 }
             }).catch(error => {
                 console.log('Error:', error);
-            })
+                throw error;
+            });
         };
 
-        getContacts();
+        updateContacts();
+
+        function setPageHeight() {
+            let page = document.querySelector('.page');
+            page.style.minHeight = window.innerHeight + 'px';
+            console.log(window.innerHeight - 100);
+            document.querySelector('.main_container').style.minHeight = 'calc(' + (window.innerHeight - 80) + 'px - 4em' + ')';
+        }
+
+        setPageHeight();
+
     </script>
 
 </body>

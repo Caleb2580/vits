@@ -123,7 +123,7 @@ app.post('/api/contact-us', async (req, res) => {
     const timestamp = now.toLocaleString('en-US', {
       timeZone: 'America/Chicago'
     });
-    contacts.push({name, email, phone, message, timestamp});
+    contacts.push({name, business, email, phone, message, timestamp});
 
     await fs.writeJson(contactsPath, contacts);
 
@@ -133,6 +133,30 @@ app.post('/api/contact-us', async (req, res) => {
     res.send({'success': false, 'error': 'Something went wrong on our side'});
   }
 });
+
+app.post('/api/admin/contacted', verifyToken, async (req, res) => {
+  const {index, timestamp, contacted} = req.body;
+
+  try {
+    let contacts = [];
+    if (await fs.pathExists(contactsPath)) {
+      contacts = await fs.readJson(contactsPath);
+    }
+    
+    if (contacts[index].timestamp = timestamp) {
+      contacts[index].contacted = contacted;
+    } else {
+      res.send({'success': false, 'error': 'Refresh'});
+      return;
+    }
+
+    await fs.writeJson(contactsPath, contacts);
+
+    res.send({'success': true});
+  } catch (error) {
+    res.send({'success': false, 'error': 'Something went wrong on our side'});
+  }
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
