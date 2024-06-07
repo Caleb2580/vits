@@ -55,6 +55,10 @@ body {
     background-color: rgba(195, 230, 253, .1);
 }
 
+.updateContactsBtn:active {
+    background-color: rgba(195, 230, 253, .3);
+}
+
 table.contacts {
     border-collapse: collapse;
 }
