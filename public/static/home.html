@@ -182,6 +182,9 @@
             let page = document.querySelector('.page');
             page.style.minHeight = window.innerHeight + 'px';
             page.style.height = window.innerHeight + 'px';
+
+            let minipage = document.querySelector('.mini_page_background');
+            minipage.style.backgroundSize = window.innerHeight + 'px ' + window.innerHeight + 'px';
         }
 
         setPageHeight();
