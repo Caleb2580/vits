@@ -7,7 +7,6 @@
     height: 80px;
     overflow: hidden;
     position: relative;
-    margin: 0;
 }
 
 .nav {
@@ -23,6 +22,7 @@
     overflow: hidden;
     background-color: rgb(11, 24, 41);
     z-index: 100;
+    margin: 0;
 }
 
 .nav #left {
@@ -35,6 +35,8 @@
     font-weight: 400;
     cursor: pointer;
     letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav #right {
@@ -50,6 +52,8 @@
     color: rgb(195, 230, 253);
     text-decoration: none;
     font-size: 1em;
+    margin: 0;
+    padding: 0;
 }
 
 .nav #right button {
