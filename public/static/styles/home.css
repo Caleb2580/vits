@@ -5,6 +5,7 @@ body, html {
     font-family: 'Space Mono', monospace;
     font-weight: 400;
     width: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -40,13 +41,13 @@ body, html {
 }
 
 .page .diamond_1 {
-    margin-top: -6em;
-    margin-left: 18em;
+    margin-top: -5em;
+    margin-left: 17em;
 }
 
 .page .diamond_2 {
-    margin-top: 11em;
-    margin-left: -11em;
+    margin-top: 13em;
+    margin-left: -13em;
 }
 
 .page .diamond_1 img {
